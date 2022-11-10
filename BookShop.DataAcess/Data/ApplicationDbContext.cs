@@ -1,11 +1,12 @@
-﻿using BookShopWeb.Models;
+﻿using BookShop.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookShopWeb.Data
+namespace BookShop.DataAcess
 {
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Category> Categories { get; set; }
+        public DbSet<CoverType> CoverTypes { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

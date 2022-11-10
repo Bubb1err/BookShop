@@ -1,4 +1,6 @@
-using BookShopWeb.Data;
+using BookShop.DataAcess;
+using BookShop.DataAcess.Repository;
+using BookShop.DataAcess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookShopWeb
@@ -13,6 +15,7 @@ namespace BookShopWeb
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
             var app = builder.Build();
