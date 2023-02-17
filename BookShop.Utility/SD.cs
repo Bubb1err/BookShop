@@ -8,5 +8,6 @@ namespace BookShop.Utility
 {
     public static class SD
     {
+        //Roles, Status, Payment
     }
 }
